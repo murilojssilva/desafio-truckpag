@@ -1,4 +1,6 @@
-<center># :rocket: Desafio TruckPag</center>
+<div align="center">
+    # :rocket: Desafio TruckPag
+</div>
 
 <p align="center">Desafio proposto pela empresa <a href="https://www.truckpag.com.br/">TruckPag</a>. Ele consiste em gerar uma interface que mostre os personagens da Disney, consumindo a API fornecida.</p>
 
