@@ -1,4 +1,4 @@
-# :rocket: Desafio TruckPag
+<center># :rocket: Desafio TruckPag</center>
 
 <p align="center">Desafio proposto pela empresa <a href="https://www.truckpag.com.br/">TruckPag</a>. Ele consiste em gerar uma interface que mostre os personagens da Disney, consumindo a API fornecida.</p>
 
@@ -63,7 +63,7 @@ $ yarn
 #### Execute a aplicação em modo de desenvolvimento
 
 ```shell
-$ yarn dev
+$ yarn start
 ```
 
 #### A aplicação iniciará na porta:3002 - acesse <http://localhost:3002>
