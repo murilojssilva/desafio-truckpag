@@ -40,7 +40,7 @@ export function Cards() {
       setTotalPages(response.data.totalPages);
       setCharacters(response.data.data);
     });
-  }, [url, search]);
+  }, [url, search, currentPage]);
 
   function handlePage(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
@@ -70,6 +70,7 @@ export function Cards() {
           <input
             type="search"
             value={search}
+            placeholder="Pesquisa..."
             onChange={(e) => setSearch(e.target.value)}
           />
         </form>

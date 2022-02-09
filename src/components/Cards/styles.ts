@@ -20,6 +20,11 @@ export const Container = styled.div`
       border-radius: 40px;
       outline: none;
       border: solid gray 2px;
+
+      &::-webkit-search-decoration:hover,
+      &::-webkit-search-cancel-button:hover {
+        cursor: pointer;
+      }
     }
   }
 
