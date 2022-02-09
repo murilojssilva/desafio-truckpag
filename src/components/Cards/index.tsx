@@ -31,8 +31,18 @@ export function Cards() {
 
   const [search, setSearch] = useState("");
 
-  const filteredCharacters = characters.filter((item) =>
-    item.name.startsWith(search.toUpperCase())
+  const filteredCharacters = characters.filter(
+    (item) =>
+      item.name.toLowerCase().includes(search.toLowerCase()) ||
+      item.films.find((film) => film.includes(search)) ||
+      item.shortFilms.find((shortFilm) => shortFilm.includes(search)) ||
+      item.videoGames.find((videoGame) => videoGame.includes(search)) ||
+      item.parkAttractions.find((parkAttraction) =>
+        parkAttraction.includes(search)
+      ) ||
+      item.enemies.find((enemie) => enemie.includes(search)) ||
+      item.allies.find((allie) => allie.includes(search)) ||
+      item.tvShows.find((tvShow) => tvShow.includes(search))
   );
 
   useEffect(() => {
@@ -54,7 +64,7 @@ export function Cards() {
   async function openModal(index: number) {
     setIsOpen(true);
 
-    api.get(`${characters[index].url}`).then((response) => {
+    api.get(`${filteredCharacters[index].url}`).then((response) => {
       setPerson(response.data);
     });
   }
@@ -136,7 +146,7 @@ export function Cards() {
               </tr>
               <tr>
                 <td>Séries de TV</td>
-                <td>{`${person.tvShows}`}</td>
+                <td>{`${person.videoGames}`}</td>
               </tr>
               <tr>
                 <td>Jogos Eletrônicos</td>
