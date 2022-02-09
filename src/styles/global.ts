@@ -2,29 +2,14 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --background: #F0F2F5;
         --red: #B12228;
-        --yellow: #F3CC64;
-        --blue: #393E8F;
-        --pink: #EFBEB7;
-        --dark-blue: #12194A;
-
-        --blue-light: #6933FF;
-		
-		--text-title: #363F5F;
-		--text-body: #969CB3;
-
         --shape: #FFFFFF;
-		--input-background: #e7e9ee;
-		--input-border: #d7d7d7;
-
     }
     * {
         margin: 0;
-        padding:0;
+        padding: 0;
         box-sizing: border-box;
     }
-
     html {
         @media (max-width: 1080px) {
             font-size: 93.75%;
@@ -35,7 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: var(--background);
+        background: ${(props) => props.theme.colors.background};
+        color: ${(props) => props.theme.colors.text}
 		-webkit-font-smoothing: antialiased;
     }
 
@@ -49,11 +35,14 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     button {
-        cursor: pointer;
         transform: filter 0.2s;
 		&:hover{
 			filter:brightness(0.9);
 		}
+    }
+
+    input, button{
+        cursor: pointer;
     }
 
     [disabled] {

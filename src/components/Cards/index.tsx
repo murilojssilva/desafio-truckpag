@@ -29,12 +29,18 @@ export function Cards() {
   const [totalPages, setTotalPages] = useState(0);
   const [modalIsOpen, setIsOpen] = useState(false);
 
+  const [search, setSearch] = useState("");
+
+  const filteredCharacters = characters.filter((item) =>
+    item.name.startsWith(search.toUpperCase())
+  );
+
   useEffect(() => {
     api.get(url).then((response) => {
       setTotalPages(response.data.totalPages);
       setCharacters(response.data.data);
     });
-  }, [url]);
+  }, [url, search]);
 
   function handlePage(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
@@ -60,7 +66,14 @@ export function Cards() {
   return (
     <>
       <Container>
-        {characters.map((character, index) => (
+        <form action="#">
+          <input
+            type="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
+        {filteredCharacters.map((character, index) => (
           <div key={index}>
             <div>
               <h1>{character.name}</h1>

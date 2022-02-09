@@ -4,19 +4,38 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
+  form {
+    text-align: center;
+    position: absolute;
+    justify-self: center;
+
+    input {
+      display: inline-block;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: relative;
+      width: 80vw;
+      height: 50px;
+      font-size: 1.5rem;
+      border-radius: 40px;
+      outline: none;
+      border: solid gray 2px;
+    }
+  }
+
   h1 {
     text-align: center;
   }
 
   div {
-    background: var(--shape);
+    background: ${(props) => props.theme.colors.primary};
     padding: 1.5rem 2rem 4rem 2rem;
     border-radius: 3rem;
-    margin: 2rem;
+    margin: 7rem 2rem 0rem 2rem;
 
     div {
       h1 {
-        color: var(--red);
+        color: var(--shape);
         font-size: 1rem;
       }
       max-width: 1120px;
@@ -27,6 +46,7 @@ export const Container = styled.div`
 
       justify-content: space-between;
       path {
+        color: var(--shape);
         cursor: pointer;
       }
     }
@@ -47,13 +67,13 @@ export const Pagination = styled.div`
   align-items: center;
   div {
     display: inline;
-    padding: 1rem;
+    padding: 6rem;
 
     button {
+      color: ${(props) => props.theme.colors.text};
+      background: ${(props) => props.theme.colors.primary};
       border-radius: 0.25rem;
-      background: var(--shape);
-      border-style: solid;
-      border-color: var(--red);
+      border: 0;
       padding: 1rem;
       margin: 0.5rem;
     }
@@ -75,11 +95,12 @@ export const PTable = styled.table`
   width: 100%;
   font-size: 2rem;
   font-family: "Mouse Memoirs", sans-serif;
+
   color: var(--red);
 
   td,
   th {
-    border: 1px solid var(--text-body);
+    border: 1px solid var(--red);
     text-align: left;
     padding: 8px;
   }
