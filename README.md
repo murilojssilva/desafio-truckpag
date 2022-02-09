@@ -68,7 +68,7 @@ $ yarn
 $ yarn start
 ```
 
-#### A aplicação iniciará na porta:3002 - acesse <http://localhost:3002>
+#### A aplicação iniciará na porta:3000 - acesse <http://localhost:3000>
 
 ---
 
@@ -79,6 +79,7 @@ As seguintes ferramentas foram usadas na construção da aplicação:
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Netlify](https://vercel.com/)
+- [Styled-Components](https://styled-components.com/)
 
 ---
 
