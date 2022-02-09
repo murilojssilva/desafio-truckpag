@@ -80,7 +80,7 @@ export function Cards() {
           <input
             type="search"
             value={search}
-            placeholder="Pesquisa..."
+            placeholder="Pesquisa por nome de filmes, séries, personagens aliados e inimigos e mais"
             onChange={(e) => setSearch(e.target.value)}
           />
         </form>
